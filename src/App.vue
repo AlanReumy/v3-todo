@@ -17,13 +17,24 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
 import { ITodoItem } from './types'
 import TodoList from './components/TodoList.vue'
 import InputHeader from './components/InputHeader.vue'
 import TodoFooter from './components/TodoFooter.vue'
 
 const todoList = ref<ITodoItem[]>([])
+
+todoList.value = JSON.parse(localStorage.getItem('todoList') as string)
+
+watchEffect(
+  () => {
+    localStorage.setItem('todoList', JSON.stringify(todoList.value))
+  },
+  {
+    flush: 'post'
+  }
+)
 
 // todo
 const isAllDone = computed(() => {
