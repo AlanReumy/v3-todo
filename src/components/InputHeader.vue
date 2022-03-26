@@ -1,7 +1,13 @@
 <template>
-  <div class="inputHeader">
-    <input type="text" v-model="newTodo" />
-    <button @click="addNewTodo">添加</button>
+  <div class="inputHeader d-flex justify-content-between">
+    <div class="flex-grow-1">
+      <input type="text" class="form-control me-3" v-model="newTodo" />
+    </div>
+    <div class="ms-3">
+      <button type="submit" class="btn btn-primary" @click="addNewTodo">
+        添加
+      </button>
+    </div>
   </div>
 </template>
 
@@ -16,3 +22,9 @@ const addNewTodo = () => {
   newTodo.value = "";
 };
 </script>
+
+<style>
+.inputHeader {
+  display: flex;
+}
+</style>

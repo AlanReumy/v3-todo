@@ -1,11 +1,15 @@
 <template>
-  <InputHeader @addNewTodo="addNewTodo" />
-  <TodoList :todoList="todoList" @deleteItem="deleteItem"></TodoList>
-  <TodoFooter
-    @changeAllTodo="changeAllTodo"
-    :isAllDone="isAllDone"
-    v-if="todoList.length > 0"
-  />
+  <div class="container mt-3 w-75">
+    <InputHeader @addNewTodo="addNewTodo" />
+    <TodoList :todoList="todoList" @deleteItem="deleteItem"></TodoList>
+    <TodoFooter
+      @changeAllTodo="changeAllTodo"
+      @deleteAll="deleteAll"
+      @deleteSelected="deleteSelected"
+      :isAllDone="isAllDone"
+      v-if="todoList.length > 0"
+    />
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -42,13 +46,27 @@ const deleteItem = (index: number) => {
 };
 
 // todo
-const changeAllTodo = (isAllDone: boolean) => {
+const changeAllTodo = (emitAllDone: boolean) => {
   todoList.value.forEach((todo) => {
-    if (isAllDone === true) {
+    if (emitAllDone === true) {
       todo.done = true;
     } else {
       todo.done = false;
     }
   });
 };
+
+const deleteAll = () => {
+  todoList.value.splice(0, todoList.value.length);
+};
+
+const deleteSelected = () => {
+  todoList.value = todoList.value.filter((todo) => {
+    if (!todo.done) {
+      return todo;
+    }
+  });
+};
 </script>
+
+<style></style>
