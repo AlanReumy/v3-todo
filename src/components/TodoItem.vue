@@ -4,9 +4,9 @@
       <input
         class="form-check-input"
         type="checkbox"
-        value=""
         id="flexCheckDefault"
-        v-model="props.todo.done"
+        :checked="props.todo.done"
+        @change="changeTodoDone"
       />
       <span
         class="ms-3"
@@ -23,18 +23,23 @@
 </template>
 
 <script lang="ts" setup>
-import { ITodoItem } from "../types";
+import { ITodoItem } from '../types'
+import { defineProps, defineEmits } from 'vue'
 
 const props = defineProps<{
-  todo: ITodoItem;
-  index: Number;
-}>();
+  todo: ITodoItem
+  index: number
+}>()
 
-const emit = defineEmits(["deleteItem"]);
+const emits = defineEmits(['deleteItem', 'changeTodoDone'])
 
 const deleteItem = () => {
-  emit("deleteItem", props.index);
-};
+  emits('deleteItem', props.index)
+}
+
+const changeTodoDone = () => {
+  emits('changeTodoDone', props.todo.id, !props.todo.done)
+}
 </script>
 
 <style>

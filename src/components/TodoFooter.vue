@@ -28,23 +28,23 @@
 </template>
 
 <script lang="ts" setup>
-import { defineEmits } from "vue";
+import { defineEmits, defineProps } from 'vue'
 
-const emits = defineEmits(["changeAllTodo", "deleteAll", "deleteSelected"]);
+const emits = defineEmits(['changeAllTodo', 'deleteAll', 'deleteSelected'])
 
 const props = defineProps<{
-  isAllDone: Boolean;
-}>();
+  isAllDone: boolean
+}>()
 
 const changeAllTodo = () => {
-  emits("changeAllTodo", !props.isAllDone);
-};
+  emits('changeAllTodo', !props.isAllDone)
+}
 
 const deleteAll = () => {
-  emits("deleteAll");
-};
+  emits('deleteAll')
+}
 
 const deleteSelected = () => {
-  emits("deleteSelected");
-};
+  emits('deleteSelected')
+}
 </script>
