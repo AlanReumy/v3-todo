@@ -3,3 +3,8 @@ export interface ITodoItem {
   name: string
   done: boolean
 }
+
+export interface PopModal {
+  title: string
+  content: string
+}
