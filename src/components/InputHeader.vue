@@ -12,15 +12,15 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-const emit = defineEmits(["addNewTodo"]);
+import { ref, defineEmits } from 'vue'
+const emit = defineEmits(['addNewTodo'])
 
-const newTodo = ref("");
+const newTodo = ref('')
 
 const addNewTodo = () => {
-  emit("addNewTodo", newTodo.value);
-  newTodo.value = "";
-};
+  emit('addNewTodo', newTodo.value)
+  newTodo.value = ''
+}
 </script>
 
 <style>
