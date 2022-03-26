@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="mt-3">
     <TodoItem
       v-for="(todo, index) in props.todoList"
       :todo="todo"
