@@ -51,11 +51,6 @@ const closePopModal = () => {
 </script>
 
 <style scoped>
-.demo {
-  /* width: 100vw;
-  height: 100vh; */
-  /* background-color: transparent; */
-}
 .close:hover {
   cursor: pointer;
 }
