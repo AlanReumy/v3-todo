@@ -12,15 +12,13 @@ git clone git@github.com:ZimTang/v3-todo.git
 
 install:
 
-使用npm
-
 ```shell
 npm install
 or
 yarn
 ```
 
-运行项目:
+run:
 
 ```shell
 npm run dev
