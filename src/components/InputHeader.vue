@@ -1,10 +1,14 @@
 <template>
   <div class="inputHeader d-flex justify-content-between">
     <div class="flex-grow-1">
-      <input type="text" class="form-control me-3" v-model="newTodo" />
+      <input
+        type="text"
+        class="form-control me-3 newTodoInput"
+        v-model="newTodo"
+      />
     </div>
     <div class="ms-3">
-      <button type="submit" class="btn btn-primary" @click="addNewTodo">
+      <button type="submit" class="btn btn-primary btn-sm" @click="addNewTodo">
         添加
       </button>
     </div>
@@ -26,5 +30,8 @@ const addNewTodo = () => {
 <style>
 .inputHeader {
   display: flex;
+}
+.newTodoInput {
+  height: 90%;
 }
 </style>

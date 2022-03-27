@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5 w-75">
+  <div class="container mt-5 w-auto">
     <InputHeader @addNewTodo="addNewTodo" />
     <TodoList
       :todoList="todoList"
