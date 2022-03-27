@@ -2,6 +2,8 @@
 
 **v3-todo** 是基于Vue 3 + Typescript + Vite开发的 web端todo应用
 
+[在线预览](http://139.196.47.8:7777/)
+
 ## 使用方法
 
 clone:
