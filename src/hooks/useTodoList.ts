@@ -1,9 +1,9 @@
 import { computed, Ref, ref, watchEffect } from 'vue'
-import { ITodoItem } from '../types'
+import { Todo } from '../types'
 import usePopModal from './usePopModal'
 const { openPopModal } = usePopModal()
 function useTodoList(isModalShow: Ref<boolean>) {
-  const todoList = ref<ITodoItem[]>([])
+  const todoList = ref<Todo[]>([])
 
   if (localStorage.getItem('todoList')) {
     todoList.value = JSON.parse(localStorage.getItem('todoList') as string)

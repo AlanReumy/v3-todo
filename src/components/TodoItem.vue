@@ -23,14 +23,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ITodoItem } from '../types'
+import { Todo } from '../types'
 import { defineProps, defineEmits } from 'vue'
 
 const props = defineProps<{
-  todo: ITodoItem
+  todo: Todo
   index: number
 }>()
-
 const emits = defineEmits(['deleteItem', 'changeTodoDone'])
 
 const deleteItem = () => {

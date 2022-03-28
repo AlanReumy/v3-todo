@@ -1,4 +1,4 @@
-export interface ITodoItem {
+export interface Todo {
   id: number
   name: string
   done: boolean
