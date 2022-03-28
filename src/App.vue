@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5 w-auto">
+  <div class="container w-auto">
     <InputHeader @addNewTodo="addNewTodo" />
     <TodoList
       :todoList="todoList"
@@ -13,16 +13,17 @@
       :isAllDone="isAllDone"
       v-if="todoList.length > 0"
     />
-    <teleport to="#popModal">
+    <Teleport to="body">
       <transition name="fade">
-        <PopModal
-          v-show="isModalShow"
-          :title="'注意'"
-          :content="'todo内容不能为空'"
-          @closePopModal="closePopModal"
-        />
+        <div class="popModal-container" v-show="isModalShow">
+          <PopModal
+            :title="'注意'"
+            :content="'todo内容不能为空'"
+            @closePopModal="closePopModal"
+          />
+        </div>
       </transition>
-    </teleport>
+    </Teleport>
   </div>
 </template>
 
@@ -48,6 +49,15 @@ const {
 </script>
 
 <style>
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+body {
+  position: relative;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
@@ -56,5 +66,14 @@ const {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.popModal-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
 }
 </style>

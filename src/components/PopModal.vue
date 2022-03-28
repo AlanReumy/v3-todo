@@ -1,7 +1,7 @@
 <template>
-  <div class="position-relative w-100 h-100">
-    <div class="position-absolute start-50 translate-middle w-50">
-      <div class="bg-light text-dark shadow-lg p-3 mb-5 bg-body rounded">
+  <div class="popModal">
+    <div class="h-100">
+      <div class="bg-light text-dark p-3 bg-body rounded lh-base h-100">
         <div
           class="border-bottom d-flex justify-content-between h-25 pb-2"
           v-if="props.title"
@@ -26,10 +26,8 @@
             </svg>
           </div>
         </div>
-        <div class="mt-2 ms-2">
-          <span>
-            {{ props.content }}
-          </span>
+        <div class="mt-2 ms-2 h-75" style="line-height: 500%">
+          {{ props.content }}
         </div>
       </div>
     </div>
@@ -51,6 +49,20 @@ const closePopModal = () => {
 </script>
 
 <style scoped>
+.popModal {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  text-align: center;
+  margin-left: -150px;
+  margin-top: -100px;
+}
 .close:hover {
   cursor: pointer;
 }

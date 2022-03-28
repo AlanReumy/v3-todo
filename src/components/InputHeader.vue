@@ -1,5 +1,5 @@
 <template>
-  <div class="inputHeader d-flex justify-content-between">
+  <div class="inputHeader pt-5 d-flex justify-content-between">
     <div class="flex-grow-1">
       <input
         type="text"
