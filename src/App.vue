@@ -17,8 +17,7 @@
       <transition name="fade">
         <div class="popModal-container" v-show="isModalShow">
           <PopModal
-            :title="'注意'"
-            :content="'todo内容不能为空'"
+            :popModal="{ title: '注意', content: 'todo内容不能为空' }"
             @closePopModal="closePopModal"
           />
         </div>

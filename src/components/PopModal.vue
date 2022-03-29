@@ -4,11 +4,11 @@
       <div class="bg-light text-dark p-3 bg-body rounded lh-base h-100">
         <div
           class="border-bottom d-flex justify-content-between h-25 pb-2"
-          v-if="props.title"
+          v-if="props.popModal.title"
         >
           <div class="ms-2">
             <span>
-              {{ props.title }}
+              {{ props.popModal.title }}
             </span>
           </div>
           <div class="me-2" @click="closePopModal">
@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="mt-2 ms-2 h-75" style="line-height: 500%">
-          {{ props.content }}
+          {{ props.popModal.content }}
         </div>
       </div>
     </div>
@@ -36,10 +36,10 @@
 
 <script lang="ts" setup>
 import { defineProps, defineEmits } from 'vue'
+import { PopModal } from '../types'
 
 const props = defineProps<{
-  title: string
-  content: string
+  popModal: PopModal
 }>()
 const emits = defineEmits(['closePopModal'])
 
