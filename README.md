@@ -31,7 +31,6 @@ yarn run dev
 ## 主要功能
 
 - [x] todo的增加与删除
-- [ ] todo的分组
 - [x] todo的本地保存
-- [ ] 用户登录注册功能
-- [ ] todo的在线保存
+- [ ] todo的分组
+
